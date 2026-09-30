@@ -40,3 +40,33 @@ def test_chat_response_log_exposes_quality_for_dashboard(
     assert response_event["ttft_ms"] == response.json()["ttft_ms"]
     assert response_event["tool_name"] == "retrieval"
     assert response_event["tool_success"] is True
+
+
+def test_concurrent_requests_keep_context_and_safe_headers(monkeypatch, tmp_path):
+    import re
+    from app.main import agent
+    from app.agent import AgentResult
+    monkeypatch.setattr(logging_config, "LOG_PATH", tmp_path / "logs.jsonl")
+    monkeypatch.setattr(agent, "run", lambda **kw: AgentResult("safe answer", 1, 1, 20, 10, 0.001, 0.8))
+
+    async def send():
+        async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as client:
+            return await asyncio.gather(*[
+                client.post("/chat", headers={"x-request-id": rid}, json={"user_id": f"student-{i}", "session_id": f"session-{i}", "feature": "qa", "message": "monitoring"})
+                for i, rid in enumerate(["req-12345678", "invalid@example.test", "req-abcdef12"])
+            ])
+
+    responses = asyncio.run(send())
+    assert responses[0].headers["x-request-id"] == "req-12345678"
+    assert responses[2].headers["x-request-id"] == "req-abcdef12"
+    for response in responses:
+        assert re.fullmatch(r"req-[0-9a-f]{8}", response.headers["x-request-id"])
+        assert response.json()["correlation_id"] == response.headers["x-request-id"]
+        assert float(response.headers["x-response-time-ms"]) >= 0
+    events = [json.loads(line) for line in (tmp_path / "logs.jsonl").read_text().splitlines()]
+    received = [event for event in events if event["event"] == "request_received"]
+    assert len({event["user_id_hash"] for event in received}) == 3
+    for i, response in enumerate(responses):
+        matching = [event for event in events if event["correlation_id"] == response.json()["correlation_id"]]
+        assert len(matching) == 2
+        assert all(event["session_id"] == f"session-{i}" for event in matching)
