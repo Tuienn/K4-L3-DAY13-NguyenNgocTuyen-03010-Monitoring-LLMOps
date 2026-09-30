@@ -1,0 +1,602 @@
+{
+  "title": "K4-L3B Day 13 Monitoring & LLMOps",
+  "source": "data/logs.jsonl",
+  "start": "2026-09-30T02:02:54.953377+00:00",
+  "end": "2026-09-30T03:02:54.953377+00:00",
+  "refresh_seconds": 30,
+  "invalid_lines": 0,
+  "panels": [
+    {
+      "id": "latency",
+      "title": "Latency percentiles and TTFT",
+      "source": "data/logs.jsonl",
+      "events": [
+        "response_sent"
+      ],
+      "fields": [
+        "latency_ms",
+        "ttft_ms"
+      ],
+      "aggregations": [
+        "p50",
+        "p95",
+        "p99",
+        "ttft_p95"
+      ],
+      "query": "event == \"response_sent\" | percentile(latency_ms, [50, 95, 99]); percentile(ttft_ms, [95])",
+      "unit": "ms",
+      "threshold": {
+        "aggregation": "p95",
+        "operator": "lte",
+        "value": 3000
+      },
+      "values": {
+        "p50": 153.0,
+        "p95": 487.0,
+        "p99": 1057.0,
+        "ttft_p95": 51.0
+      }
+    },
+    {
+      "id": "traffic",
+      "title": "Request traffic",
+      "source": "data/logs.jsonl",
+      "events": [
+        "request_received"
+      ],
+      "fields": [
+        "event"
+      ],
+      "aggregations": [
+        "count",
+        "rate_per_minute"
+      ],
+      "query": "event == \"request_received\" | count() by 1m",
+      "unit": "requests_per_minute",
+      "threshold": {
+        "aggregation": "rate_per_minute",
+        "operator": "gte",
+        "value": 1
+      },
+      "values": {
+        "count": 54,
+        "rate_per_minute": 0.9
+      }
+    },
+    {
+      "id": "errors",
+      "title": "Error rate and retrieval success",
+      "source": "data/logs.jsonl",
+      "events": [
+        "request_received",
+        "request_failed"
+      ],
+      "fields": [
+        "error_type",
+        "tool_name",
+        "tool_success"
+      ],
+      "aggregations": [
+        "error_rate_pct",
+        "count_by_value",
+        "tool_success_rate_pct"
+      ],
+      "query": "count(event == \"request_failed\") / count(event == \"request_received\") * 100; count_by(error_type); count(tool_success == true) / count(tool_success != null) * 100",
+      "unit": "percent",
+      "threshold": {
+        "aggregation": "error_rate_pct",
+        "operator": "lte",
+        "value": 2
+      },
+      "values": {
+        "error_rate_pct": 0.0,
+        "count_by_value": {},
+        "tool_success_rate_pct": 100.0
+      }
+    },
+    {
+      "id": "cost",
+      "title": "Cost over time",
+      "source": "data/logs.jsonl",
+      "events": [
+        "response_sent"
+      ],
+      "fields": [
+        "cost_usd"
+      ],
+      "aggregations": [
+        "sum_by_minute",
+        "total"
+      ],
+      "query": "event == \"response_sent\" | sum(cost_usd) by 1m; sum(cost_usd)",
+      "unit": "usd",
+      "threshold": {
+        "aggregation": "total",
+        "operator": "lte",
+        "value": 2.5
+      },
+      "values": {
+        "total": 0.10974899999999999
+      }
+    },
+    {
+      "id": "tokens",
+      "title": "Input and output tokens",
+      "source": "data/logs.jsonl",
+      "events": [
+        "response_sent"
+      ],
+      "fields": [
+        "tokens_in",
+        "tokens_out"
+      ],
+      "aggregations": [
+        "sum_by_field"
+      ],
+      "query": "event == \"response_sent\" | sum(tokens_in), sum(tokens_out)",
+      "unit": "tokens",
+      "threshold": {
+        "aggregation": "sum_by_field",
+        "operator": "lte",
+        "value": 50000
+      },
+      "values": {
+        "tokens_in": 2088,
+        "tokens_out": 6899
+      }
+    },
+    {
+      "id": "quality",
+      "title": "Quality proxy",
+      "source": "data/logs.jsonl",
+      "events": [
+        "response_sent"
+      ],
+      "fields": [
+        "quality_score"
+      ],
+      "aggregations": [
+        "mean"
+      ],
+      "query": "event == \"response_sent\" | mean(quality_score)",
+      "unit": "score_0_to_1",
+      "threshold": {
+        "aggregation": "mean",
+        "operator": "gte",
+        "value": 0.75
+      },
+      "values": {
+        "mean": 0.8814814814814815
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "minute": "2026-09-30T02:02:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:03:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:04:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:05:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:06:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:07:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:08:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:09:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:10:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:11:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:12:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:13:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:14:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:15:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:16:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:17:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:18:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:19:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:20:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:21:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:22:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:23:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:24:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:25:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:26:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:27:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:28:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:29:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:30:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:31:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:32:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:33:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:34:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:35:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:36:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:37:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:38:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:39:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:40:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:41:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:42:00Z",
+      "traffic": 10,
+      "cost": 0.020799000000000005,
+      "latency_p95": 1057.0,
+      "error_rate_pct": 0.0
+    },
+    {
+      "minute": "2026-09-30T02:43:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:44:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:45:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:46:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:47:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:48:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:49:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:50:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:51:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:52:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:53:00Z",
+      "traffic": 22,
+      "cost": 0.044115,
+      "latency_p95": 440.0,
+      "error_rate_pct": 0.0
+    },
+    {
+      "minute": "2026-09-30T02:54:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:55:00Z",
+      "traffic": 22,
+      "cost": 0.04483499999999999,
+      "latency_p95": 435.0,
+      "error_rate_pct": 0.0
+    },
+    {
+      "minute": "2026-09-30T02:56:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:57:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:58:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T02:59:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T03:00:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T03:01:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    },
+    {
+      "minute": "2026-09-30T03:02:00Z",
+      "traffic": 0,
+      "cost": 0,
+      "latency_p95": null,
+      "error_rate_pct": null
+    }
+  ]
+}

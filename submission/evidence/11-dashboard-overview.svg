@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="950" viewBox="0 0 1500 950">
+<rect width="1500" height="950" fill="#eef3f7"/>
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#17283a}.label{font-size:13px;fill:#52667a}.value{font-family:monospace;font-size:24px}.threshold{font-size:13px;fill:#ae542c}</style>
+<text x="35" y="48" class="" font-size="27">LLM operations / Day 13 — Nguyen Ngoc Tuyen · 03010</text>
+<text x="35" y="80" class="label">Source: data/logs.jsonl · 2026-09-30T02:02:54 → 2026-09-30T03:02:54 UTC</text>
+<text x="35" y="103" class="label">Last 60 minutes · Refresh 30s on /dashboard · Exported runtime chart, not a browser screenshot</text>
+<rect x="35" y="132" width="460" height="360" fill="white" stroke="#cfdae3"/>
+<text x="55" y="164" class="" font-size="18">Latency percentiles and TTFT</text>
+<text x="55" y="205" class="value">153</text>
+<text x="55" y="225" class="label">P50 (ms)</text>
+<text x="275" y="205" class="value">487</text>
+<text x="275" y="225" class="label">P95 (ms)</text>
+<text x="55" y="262" class="value">1,057</text>
+<text x="55" y="282" class="label">P99 (ms)</text>
+<text x="275" y="262" class="value">51</text>
+<text x="275" y="282" class="label">TTFT P95 (ms)</text>
+<path d="M 83 337 V 417 H 470" fill="none" stroke="#cfdae3"/>
+<text x="45" y="340" class="label">3,300</text>
+<text x="55" y="417" class="label">0</text>
+<path d="M 83 344.27272727272725 H 470" stroke="#ae542c" stroke-dasharray="5 3"/>
+<circle cx="341.0" cy="391.3757575757576" r="3" fill="#17679a"/>
+<polyline points="341.0,391.3757575757576" stroke="#17679a" stroke-width="2" fill="none"/>
+<circle cx="411.95" cy="406.3333333333333" r="3" fill="#17679a"/>
+<polyline points="411.95,406.3333333333333" stroke="#17679a" stroke-width="2" fill="none"/>
+<circle cx="424.84999999999997" cy="406.45454545454544" r="3" fill="#17679a"/>
+<polyline points="424.84999999999997,406.45454545454544" stroke="#17679a" stroke-width="2" fill="none"/>
+<text x="83" y="436" class="label">02:02</text>
+<text x="430" y="436" class="label">03:02</text>
+<text x="55" y="460" class="threshold">Threshold: p95 ≤ 3000 ms</text>
+<text x="55" y="480" class="label">Chart: latency_p95 per minute · UTC time → ms</text>
+<rect x="520" y="132" width="460" height="360" fill="white" stroke="#cfdae3"/>
+<text x="540" y="164" class="" font-size="18">Request traffic</text>
+<text x="540" y="205" class="value">54</text>
+<text x="540" y="225" class="label">Requests (requests)</text>
+<text x="760" y="205" class="value">0.9</text>
+<text x="760" y="225" class="label">Mean / minute (requests_per_minute)</text>
+<path d="M 568 337 V 417 H 955" fill="none" stroke="#cfdae3"/>
+<text x="530" y="340" class="label">24.2</text>
+<text x="540" y="417" class="label">0</text>
+<path d="M 568 413.6942148760331 H 955" stroke="#ae542c" stroke-dasharray="5 3"/>
+<circle cx="568.0" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="574.45" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="580.9" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="587.35" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="593.8" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="600.25" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="606.7" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="613.15" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="619.6" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="626.05" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="632.5" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="638.95" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="645.4" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="651.85" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="658.3" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="664.75" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="671.2" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="677.65" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="684.1" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="690.55" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="697.0" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="703.45" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="709.9" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="716.35" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="722.8" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="729.25" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="735.7" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="742.15" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="748.6" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="755.05" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="761.5" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="767.95" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="774.4" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="780.85" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="787.3" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="793.75" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="800.2" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="806.65" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="813.1" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="819.55" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="826.0" cy="383.9421487603306" r="3" fill="#17679a"/>
+<circle cx="832.45" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="838.9" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="845.35" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="851.8" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="858.25" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="864.7" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="871.15" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="877.6" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="884.05" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="890.5" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="896.95" cy="344.27272727272725" r="3" fill="#17679a"/>
+<circle cx="903.4000000000001" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="909.8499999999999" cy="344.27272727272725" r="3" fill="#17679a"/>
+<circle cx="916.3" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="922.75" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="929.2" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="935.65" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="942.1" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="948.55" cy="417.0" r="3" fill="#17679a"/>
+<circle cx="955.0" cy="417.0" r="3" fill="#17679a"/>
+<polyline points="568.0,417.0 574.45,417.0 580.9,417.0 587.35,417.0 593.8,417.0 600.25,417.0 606.7,417.0 613.15,417.0 619.6,417.0 626.05,417.0 632.5,417.0 638.95,417.0 645.4,417.0 651.85,417.0 658.3,417.0 664.75,417.0 671.2,417.0 677.65,417.0 684.1,417.0 690.55,417.0 697.0,417.0 703.45,417.0 709.9,417.0 716.35,417.0 722.8,417.0 729.25,417.0 735.7,417.0 742.15,417.0 748.6,417.0 755.05,417.0 761.5,417.0 767.95,417.0 774.4,417.0 780.85,417.0 787.3,417.0 793.75,417.0 800.2,417.0 806.65,417.0 813.1,417.0 819.55,417.0 826.0,383.9421487603306 832.45,417.0 838.9,417.0 845.35,417.0 851.8,417.0 858.25,417.0 864.7,417.0 871.15,417.0 877.6,417.0 884.05,417.0 890.5,417.0 896.95,344.27272727272725 903.4000000000001,417.0 909.8499999999999,344.27272727272725 916.3,417.0 922.75,417.0 929.2,417.0 935.65,417.0 942.1,417.0 948.55,417.0 955.0,417.0" stroke="#17679a" stroke-width="2" fill="none"/>
+<text x="568" y="436" class="label">02:02</text>
+<text x="915" y="436" class="label">03:02</text>
+<text x="540" y="460" class="threshold">Threshold: rate_per_minute ≥ 1 requests_per_minute</text>
+<text x="540" y="480" class="label">Chart: traffic per minute · UTC time → requests_per_minute</text>
+<rect x="1005" y="132" width="460" height="360" fill="white" stroke="#cfdae3"/>
+<text x="1025" y="164" class="" font-size="18">Error rate and retrieval success</text>
+<text x="1025" y="205" class="value">0</text>
+<text x="1025" y="225" class="label">Error rate (percent)</text>
+<text x="1245" y="205" class="value">100</text>
+<text x="1245" y="225" class="label">Retrieval success (percent)</text>
+<path d="M 1053 337 V 417 H 1440" fill="none" stroke="#cfdae3"/>
+<text x="1015" y="340" class="label">2.2</text>
+<text x="1025" y="417" class="label">0</text>
+<path d="M 1053 344.27272727272725 H 1440" stroke="#ae542c" stroke-dasharray="5 3"/>
+<circle cx="1311.0" cy="417.0" r="3" fill="#17679a"/>
+<polyline points="1311.0,417.0" stroke="#17679a" stroke-width="2" fill="none"/>
+<circle cx="1381.95" cy="417.0" r="3" fill="#17679a"/>
+<polyline points="1381.95,417.0" stroke="#17679a" stroke-width="2" fill="none"/>
+<circle cx="1394.85" cy="417.0" r="3" fill="#17679a"/>
+<polyline points="1394.85,417.0" stroke="#17679a" stroke-width="2" fill="none"/>
+<text x="1053" y="436" class="label">02:02</text>
+<text x="1400" y="436" class="label">03:02</text>
+<text x="1025" y="460" class="threshold">Threshold: error_rate_pct ≤ 2 percent</text>
+<text x="1025" y="480" class="label">Error breakdown: none · retrieval target ≥ 90%</text>
+<rect x="35" y="517" width="460" height="360" fill="white" stroke="#cfdae3"/>
+<text x="55" y="549" class="" font-size="18">Cost over time</text>
+<text x="55" y="590" class="value">0.109749</text>
+<text x="55" y="610" class="label">Total cost (usd)</text>
+<path d="M 83 722 V 802 H 470" fill="none" stroke="#cfdae3"/>
+<text x="45" y="725" class="label">0.049318</text>
+<text x="55" y="802" class="label">0</text>
+<circle cx="83.0" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="89.45" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="95.9" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="102.35" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="108.8" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="115.25" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="121.7" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="128.15" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="134.6" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="141.05" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="147.5" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="153.95" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="160.4" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="166.85000000000002" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="173.3" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="179.75" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="186.2" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="192.64999999999998" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="199.1" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="205.55" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="212.0" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="218.45" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="224.89999999999998" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="231.35000000000002" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="237.8" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="244.25" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="250.70000000000002" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="257.15" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="263.6" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="270.05" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="276.5" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="282.95000000000005" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="289.4" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="295.85" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="302.29999999999995" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="308.75" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="315.2" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="321.65" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="328.1" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="334.55" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="341.0" cy="768.2617476200614" r="3" fill="#17679a"/>
+<circle cx="347.45" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="353.9" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="360.35" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="366.79999999999995" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="373.25" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="379.70000000000005" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="386.15" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="392.6" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="399.05" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="405.5" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="411.95" cy="730.4406460050488" r="3" fill="#17679a"/>
+<circle cx="418.40000000000003" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="424.84999999999997" cy="729.2727272727273" r="3" fill="#17679a"/>
+<circle cx="431.3" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="437.75" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="444.2" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="450.65" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="457.1" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="463.54999999999995" cy="802.0" r="3" fill="#17679a"/>
+<circle cx="470.0" cy="802.0" r="3" fill="#17679a"/>
+<polyline points="83.0,802.0 89.45,802.0 95.9,802.0 102.35,802.0 108.8,802.0 115.25,802.0 121.7,802.0 128.15,802.0 134.6,802.0 141.05,802.0 147.5,802.0 153.95,802.0 160.4,802.0 166.85000000000002,802.0 173.3,802.0 179.75,802.0 186.2,802.0 192.64999999999998,802.0 199.1,802.0 205.55,802.0 212.0,802.0 218.45,802.0 224.89999999999998,802.0 231.35000000000002,802.0 237.8,802.0 244.25,802.0 250.70000000000002,802.0 257.15,802.0 263.6,802.0 270.05,802.0 276.5,802.0 282.95000000000005,802.0 289.4,802.0 295.85,802.0 302.29999999999995,802.0 308.75,802.0 315.2,802.0 321.65,802.0 328.1,802.0 334.55,802.0 341.0,768.2617476200614 347.45,802.0 353.9,802.0 360.35,802.0 366.79999999999995,802.0 373.25,802.0 379.70000000000005,802.0 386.15,802.0 392.6,802.0 399.05,802.0 405.5,802.0 411.95,730.4406460050488 418.40000000000003,802.0 424.84999999999997,729.2727272727273 431.3,802.0 437.75,802.0 444.2,802.0 450.65,802.0 457.1,802.0 463.54999999999995,802.0 470.0,802.0" stroke="#17679a" stroke-width="2" fill="none"/>
+<text x="83" y="821" class="label">02:02</text>
+<text x="430" y="821" class="label">03:02</text>
+<text x="55" y="845" class="threshold">Threshold: total ≤ 2.5 usd</text>
+<text x="55" y="865" class="label">Chart: cost per minute · UTC time → usd</text>
+<rect x="520" y="517" width="460" height="360" fill="white" stroke="#cfdae3"/>
+<text x="540" y="549" class="" font-size="18">Input and output tokens</text>
+<text x="540" y="590" class="value">2088</text>
+<text x="540" y="610" class="label">Input tokens (tokens)</text>
+<text x="760" y="590" class="value">6899</text>
+<text x="760" y="610" class="label">Output tokens (tokens)</text>
+<path d="M 568 722 V 802 H 955" fill="none" stroke="#cfdae3"/>
+<text x="530" y="725" class="label">55,000</text>
+<text x="540" y="802" class="label">0</text>
+<path d="M 568 729.2727272727273 H 955" stroke="#ae542c" stroke-dasharray="5 3"/>
+<circle cx="568.0" cy="798.9629090909091" r="3" fill="#17679a"/>
+<circle cx="955.0" cy="791.9650909090909" r="3" fill="#17679a"/>
+<polyline points="568.0,798.9629090909091 955.0,791.9650909090909" stroke="#17679a" stroke-width="2" fill="none"/>
+<text x="568" y="821" class="label">Input tokens / Output tokens</text>
+<text x="540" y="845" class="threshold">Threshold: sum_by_field ≤ 50000 tokens</text>
+<rect x="1005" y="517" width="460" height="360" fill="white" stroke="#cfdae3"/>
+<text x="1025" y="549" class="" font-size="18">Quality proxy</text>
+<text x="1025" y="590" class="value">0.881481</text>
+<text x="1025" y="610" class="label">Mean quality (score_0_to_1)</text>
+<path d="M 1053 722 V 802 H 1440" fill="none" stroke="#cfdae3"/>
+<text x="1015" y="725" class="label">0.96963</text>
+<text x="1025" y="802" class="label">0</text>
+<path d="M 1053 740.1207028265852 H 1440" stroke="#ae542c" stroke-dasharray="5 3"/>
+<circle cx="1053.0" cy="729.2727272727273" r="3" fill="#17679a"/>
+<polyline points="1053.0,729.2727272727273" stroke="#17679a" stroke-width="2" fill="none"/>
+<text x="1053" y="821" class="label">Mean quality</text>
+<text x="1025" y="845" class="threshold">Threshold: mean ≥ 0.75 score_0_to_1</text>
+<text x="35" y="927" class="label">Cost = lab estimates · Quality = heuristic proxy · Match correlation ID with Langfuse for request investigation</text>
+</svg>

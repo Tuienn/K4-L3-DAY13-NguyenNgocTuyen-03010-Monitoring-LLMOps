@@ -1,0 +1,20 @@
+[
+  {
+    "name": "day13-chat",
+    "version": 1,
+    "labels": [
+      "production",
+      "baseline"
+    ],
+    "template": "Feature={{feature}}\nDocs={{docs}}\nQuestion={{message}}"
+  },
+  {
+    "name": "day13-chat",
+    "version": 2,
+    "labels": [
+      "candidate",
+      "latest"
+    ],
+    "template": "Answer concisely using the retrieved context.\nFeature={{feature}}\nDocs={{docs}}\nQuestion={{message}}"
+  }
+]

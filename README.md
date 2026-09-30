@@ -265,3 +265,26 @@ Không push bài làm trực tiếp lên repo đề bài và không dùng chung 
 - [RUBRIC.md](docs/RUBRIC.md), [RULES.md](docs/RULES.md), [SUBMISSION.md](docs/SUBMISSION.md): cách chấm, quy định và cách nộp.
 - [grading-evidence.md](docs/grading-evidence.md): checklist nhanh các ảnh/output cần thu thập.
 - [REPORT.md](submission/REPORT.md): báo cáo cá nhân duy nhất cần hoàn thiện.
+
+## Bản thực hiện đến CP2
+
+Sau khi activate `.venv` và cấu hình `.env`, chạy:
+
+```bash
+uvicorn app.main:app --env-file .env
+python scripts/load_test.py --concurrency 5
+```
+
+Mở `http://127.0.0.1:8000/dashboard`: sáu panel từ JSONL, cửa sổ 60 phút, refresh 30s. API dữ liệu tại `/dashboard/data`. Không cần cài thêm thư viện dashboard.
+
+Xuất dashboard có dữ liệu sang HTML/SVG:
+
+```bash
+python scripts/export_dashboard.py
+# Nếu có ImageMagick, chuyển bản SVG thành PNG:
+magick submission/evidence/11-dashboard-overview.svg submission/evidence/11-dashboard-overview.png
+```
+
+`python scripts/verify_cp2.py` dùng keys trong `.env`, tạo prompt baseline/candidate nếu thiếu, chạy cùng sample queries trên cả hai labels, promote production rồi rollback về baseline trong `finally`. Script gửi traces thật và đọc lại qua Observations API v2, đối chiếu parent IDs, prompt link, token/cost với logs. Không chạy script trên project production thật; đây là project lab cá nhân. `--resume` chỉ đọc lại IDs của workload đã lưu, không tạo workload hoặc đổi production label.
+
+Kết quả và evidence tới CP2 nằm trong [submission/REPORT.md](submission/REPORT.md).

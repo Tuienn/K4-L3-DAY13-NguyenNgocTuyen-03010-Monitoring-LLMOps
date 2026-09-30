@@ -1,25 +1,28 @@
 alerts:
-  - name: TODO_alert_1
-    severity: TODO
-    condition: TODO
-    duration: TODO
+  - name: HighLatencyP95
+    severity: warning
+    condition: 'p95(response_sent.latency_ms, window=5m) > 3000'
+    duration: 5m
     type: symptom-based
     channel: slack
-    owner: TODO
+    slack_channel: '#k4-l3b-alerts'
+    owner: NguyenNgocTuyen-03010
     runbook: docs/alerts.md#alert-1
-  - name: TODO_alert_2
-    severity: TODO
-    condition: TODO
-    duration: TODO
+  - name: HighErrorRate
+    severity: critical
+    condition: '100 * count(request_failed, window=5m) / count(request_received, window=5m) > 2; evaluate only when count(request_received, window=5m) >= 20'
+    duration: 5m
     type: symptom-based
     channel: slack
-    owner: TODO
+    slack_channel: '#k4-l3b-alerts'
+    owner: NguyenNgocTuyen-03010
     runbook: docs/alerts.md#alert-2
-  - name: TODO_alert_3
-    severity: TODO
-    condition: TODO
-    duration: TODO
+  - name: LowRetrievalSuccess
+    severity: warning
+    condition: '100 * count(tool_name=retrieval and tool_success=true, window=5m) / count(tool_name=retrieval and tool_success!=null, window=5m) < 90; count each correlation_id once; evaluate only when retrieval attempts >= 20'
+    duration: 5m
     type: symptom-based
     channel: slack
-    owner: TODO
+    slack_channel: '#k4-l3b-alerts'
+    owner: NguyenNgocTuyen-03010
     runbook: docs/alerts.md#alert-3

@@ -1,0 +1,244 @@
+[
+  {
+    "label": "baseline",
+    "correlation_id": "req-1631113c",
+    "latency_ms": 425,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-1631113c",
+      "x-response-time-ms": "428.94"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-5df221d3",
+    "latency_ms": 151,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-5df221d3",
+      "x-response-time-ms": "153.33"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-b946c3d4",
+    "latency_ms": 151,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-b946c3d4",
+      "x-response-time-ms": "153.94"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-253abda0",
+    "latency_ms": 153,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-253abda0",
+      "x-response-time-ms": "156.38"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-36d975ca",
+    "latency_ms": 153,
+    "ttft_ms": 51,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-36d975ca",
+      "x-response-time-ms": "156.38"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-b3048acd",
+    "latency_ms": 152,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-b3048acd",
+      "x-response-time-ms": "154.83"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-0c5795d6",
+    "latency_ms": 151,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-0c5795d6",
+      "x-response-time-ms": "153.93"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-aaa632f0",
+    "latency_ms": 151,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-aaa632f0",
+      "x-response-time-ms": "153.62"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-46e3c205",
+    "latency_ms": 152,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-46e3c205",
+      "x-response-time-ms": "155.43"
+    }
+  },
+  {
+    "label": "baseline",
+    "correlation_id": "req-14dc2db9",
+    "latency_ms": 152,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-14dc2db9",
+      "x-response-time-ms": "155.86"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-53ad723a",
+    "latency_ms": 435,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-53ad723a",
+      "x-response-time-ms": "438.57"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-842ab38f",
+    "latency_ms": 152,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-842ab38f",
+      "x-response-time-ms": "155.51"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-af1df9cc",
+    "latency_ms": 154,
+    "ttft_ms": 51,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-af1df9cc",
+      "x-response-time-ms": "157.71"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-b1391284",
+    "latency_ms": 153,
+    "ttft_ms": 51,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-b1391284",
+      "x-response-time-ms": "157.26"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-61347afe",
+    "latency_ms": 153,
+    "ttft_ms": 51,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-61347afe",
+      "x-response-time-ms": "156.34"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-6fbbf762",
+    "latency_ms": 152,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-6fbbf762",
+      "x-response-time-ms": "155.95"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-d1a5cf60",
+    "latency_ms": 152,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-d1a5cf60",
+      "x-response-time-ms": "156.28"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-e141a61a",
+    "latency_ms": 153,
+    "ttft_ms": 51,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-e141a61a",
+      "x-response-time-ms": "157.14"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-ff809c6c",
+    "latency_ms": 151,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-ff809c6c",
+      "x-response-time-ms": "154.82"
+    }
+  },
+  {
+    "label": "candidate",
+    "correlation_id": "req-1d6fe2da",
+    "latency_ms": 153,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-1d6fe2da",
+      "x-response-time-ms": "156.84"
+    }
+  },
+  {
+    "label": "production",
+    "correlation_id": "req-ab440136",
+    "latency_ms": 430,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-ab440136",
+      "x-response-time-ms": "433.59"
+    }
+  },
+  {
+    "label": "production",
+    "correlation_id": "req-a79f48d1",
+    "latency_ms": 721,
+    "ttft_ms": 50,
+    "status_code": 200,
+    "response_headers": {
+      "x-request-id": "req-a79f48d1",
+      "x-response-time-ms": "723.85"
+    }
+  }
+]
